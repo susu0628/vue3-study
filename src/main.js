@@ -1,4 +1,4 @@
 import { createApp } from "vue";
-import App from "./components/transition/animation";
+import App from "./components/compositionApi/setupParent";
 
 createApp(App).mount("#app");
