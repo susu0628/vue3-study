@@ -1,4 +1,4 @@
-import { createApp } from "vue";
-import App from "./components/compositionApi/watch/optionsWatch";
+import { createApp } from 'vue'
+import App from './components/compositionApi/toRefs.vue'
 
-createApp(App).mount("#app");
+createApp(App).mount('#app')
