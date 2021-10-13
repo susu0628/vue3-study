@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./renderElement.js"></script>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <script>
+    const app = h('div', null, [
+      h('h2', null, `当前计数：100`),
+      h('button', {
+        onClick: () => {
+          this.addCount()
+        }
+      }, '+1')
+    ])
+    // const app = {
+    //   data: reactive({ count: 100 }),
+    //   render() {
+    //     return h('div', null, [
+    //       h('h2', null, `当前计数${this.count}`),
+    //       h('button', {
+    //         onClick: () => {
+    //           this.addCount()
+    //         }
+    //       }, '+1')
+    //     ]) 
+    //   }
+    // }
+    // createApp().mount('#app')
+    mount(app, document.querySelector('#app'))
+  </script>
+</body>
+</html>
