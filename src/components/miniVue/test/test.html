@@ -6,35 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="./renderElement.js"></script>
+  <script src="./reactive.js"></script>
+  <script src="./createApp.js"></script>
 </head>
 <body>
   <div id="app">
 
   </div>
   <script>
-    const app = h('div', null, [
-      h('h2', null, `当前计数：100`),
-      h('button', {
-        onClick: () => {
-          this.addCount()
-        }
-      }, '+1')
-    ])
-    // const app = {
-    //   data: reactive({ count: 100 }),
-    //   render() {
-    //     return h('div', null, [
-    //       h('h2', null, `当前计数${this.count}`),
-    //       h('button', {
-    //         onClick: () => {
-    //           this.addCount()
-    //         }
-    //       }, '+1')
-    //     ]) 
-    //   }
-    // }
-    // createApp().mount('#app')
-    mount(app, document.querySelector('#app'))
+    // 渲染测试代码  h函数  mount函数  patch更新函数
+    // const vNode = h('div', null, [
+    //   h('h2', null, `当前计数：100`),
+    //   h('button', {
+    //     onClick: () => {
+    //       this.addCount()
+    //     }
+    //   }, '+1')
+    // ])
+    // mount(vNode, document.querySelector('#app'))
+    // setTimeout(() => {
+    //   const vNode1 = h('div', null, [
+    //     h('h2', null, 'hello World')
+    //   ])
+    //   patch(vNode1, vNode)
+    // }, 1000);
+
+    const app = {
+      data: reactive({ count: 100 }),
+      render() {
+        return h('div', null, [
+          h('h2', null, `当前计数${this.data.count}`),
+          h('button', {
+            onClick: () => {
+              console.log('click')
+              this.data.count++
+            }
+          }, '+1')
+        ])
+      }
+    }
+    createApp(app).mount('#app')
   </script>
 </body>
 </html>
