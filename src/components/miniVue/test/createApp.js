@@ -1,19 +1,20 @@
 const createApp = (rootComponent) => {
   return {
-    mount: (selector) =>{
+    mount(select) {
       let isMounted = false;
       let oldNode = null;
       watchEffect(() => {
         if (!isMounted) {
-          oldNode = rootComponent.render();
-          mount(oldNode, document.querySelector(selector))
+          oldNode  = rootComponent.render()
+          mount(oldNode, document.querySelector(select))
           isMounted = true
         } else {
           let newNode = rootComponent.render()
-          patch(oldNode, newNode);
+          patch(newNode, oldNode)
           oldNode = newNode
         }
       })
+      
     }
   }
 }
