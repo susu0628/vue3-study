@@ -5,6 +5,8 @@
     </div>
     <div class="tabbar-container">
       <div v-for="tab in tabBar" :key="tab.text">
+        <!-- custom 表示元素要自定义，如果不写，会用a元素包裹 -->
+        <!-- 作用域插槽 v-slot 可以获取内部传递给我们的一些值 eg：isActive：是否匹配的状态 navigate：触发导航的函数-->
         <router-link :to="tab.path" v-slot="{isActive, navigate}" custom>
           <div class="tabbar-box" @click="navigate">
             <div>
