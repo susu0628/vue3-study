@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import App from './components/compositionApi/watchEffect/watchEffect'
-
-createApp(App).mount('#app')
+import router from './components/router'
+import App from './components/vueRouter/index.vue'
+createApp(App).use(router).mount('#app')
