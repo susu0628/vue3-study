@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 100%;
+      display: flex;
+    }
+    .zhang {
+      flex: 0 2 100px;
+    }
+    .xin, .xu {
+      flex: 0 1 100px;
+    }
+    .shuai {
+      flex: 3 0 20px;
+    }
+    .ge {
+      flex: 2 0 20px;
+    }
+    .container2 {
+      width: 100%;
+      display: flex;
+    }
+    .container2 >div {
+      flex: 1 0 100px;
+      margin: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <item class="zhang">范张</item>
+    <item class="xin">范鑫</item>
+    <item class="xu">范旭</item>
+    <item class="shuai">范帅</item>
+    <item class="ge">范哥</item>
+  </div>
+  <div class="container2">
+    <div>
+      <button class="btn">左边按钮</button>
+    </div>
+    <div>
+      <button class="btn">右边按钮</button>
+    </div>
+  </div>
+</body>
+</html>
