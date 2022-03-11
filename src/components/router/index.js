@@ -29,6 +29,10 @@ const routes = [
     component: () => import('/src/components/vueRouter/components/showUser.vue')
   },
   {
+    path: '/slotDemo',
+    component: () => import('/src/components/slotDemo/index.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     component: () => import('/src/components/vueRouter/components/NotFound.vue')
   },
