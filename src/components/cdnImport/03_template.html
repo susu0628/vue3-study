@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="x-template" id="template">
+    <div>
+      <h2>{{message}}</h2>
+      <h2 class="counter">{{count}}</h2>
+      <button id="add" @click="addCount">+1</button>
+      <button id="sub" @click="subCount">-1</button>
+    </div>
+  </script>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          count: 100,
+          message: 'hello vue'
+        }
+      },
+      template: '#template',
+      methods: {
+        addCount: function () {
+          this.count++
+        },
+        subCount() {
+          this.count -= 1
+        }
+      }
+    }).mount('#app')
+    
+  </script>
+</body>
+</html>
