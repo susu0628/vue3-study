@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <a href="/home">Home</a>
+    <a href="/about">About</a>
+    <div class="router-view"></div>
+  </div>
+  <script>
+    // history route页面刷新时，会404，要ng配置
+    const historyChange = () => {
+      switch(location.pathname) {
+        case '/home':
+          document.querySelector('.router-view').innerHTML = 'Home Page';
+          break;
+        case '/about':
+          document.querySelector('.router-view').innerHTML = 'About Page';
+          break;
+        default:
+          break;
+      }
+    }
+    const aEles = document.querySelectorAll('a');
+    for (let aEle of aEles) {
+      aEle.addEventListener('click', (e) => {
+        e.preventDefault()
+        window.history.pushState({}, '', aEle.getAttribute('href'));
+        historyChange()
+      })
+    }
+
+  </script>
+</body>
+</html>
