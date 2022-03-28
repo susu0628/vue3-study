@@ -1,7 +1,9 @@
+import {createApp} from 'vue';
 import { sum } from './math.js';
 import { mult } from '../ts/mult.ts';
 // import _ from '../node_modules/lodash-es/lodash.default.js';
 import _ from 'lodash-es';
+import app from '../vue/app.vue';
 import "../css/index.css";
 import "../css/title.less";
 
@@ -14,3 +16,5 @@ const titleEle = document.createElement('div')
 titleEle.className = "title";
 titleEle.innerHTML = 'hello vite';
 document.body.appendChild(titleEle);
+
+createApp(app).mount('#app')
